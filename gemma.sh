@@ -58,7 +58,7 @@ if [ -f output/York_all_relatedness_chr__CHR__ ];
   -bfile $GenotypeDir/york.full.autosomes.pruned \
   -gk 1 \
   -snps $WorkingDir/SNPlist_for_GRMs/SNPlist_chr__CHR__.txt \
-  -o York_all_relatedness_chr__CHR__.LOCO
+  -o York_all_relatedness_chr__CHR__
 fi
 
 #---------------------------------------
@@ -84,7 +84,7 @@ gemma \
 -a $GenotypeDir/York_chr__CHR__.plink.v2.map \
 -k $WorkingDir/output/York_all_relatedness_chr__CHR__.cXX.txt \
 -lmm 1 \
--o OMA_z_age_adj_chr__CHR__.LOCO \
+-o OMA_z_age_adj_chr__CHR__ \
 -loco __CHR__
 
 #Phenotype 2. In the -n specify the column of Phenotype 2
@@ -95,7 +95,7 @@ gemma \
 -a $GenotypeDir/York_chr__CHR__.plink.v2.map \
 -k $WorkingDir/output/York_all_relatedness_chr__CHR__.cXX.txt \
 -lmm 1 \
--o OMS_z_age_adj_chr__CHR__.LOCO \
+-o OMS_z_age_adj_chr__CHR__ \
 -loco __CHR__
 
 EOF1
@@ -106,8 +106,8 @@ chmod 777 Script_template_York_Gemma_association_analysis.txt
 for i in {1..22}
   do
   echo -e "Generate script for chr$i"
-  sed "s/__CHR__/$i/g" Script_template_York_Gemma_association_analysis.txt > Script_York_Gemma_association_analysis_chr${i}_LOCO.sh
-  chmod 777 Script_York_Gemma_association_analysis_chr${i}_LOCO.sh
-  sbatch Script_York_Gemma_association_analysis_chr${i}_LOCO.sh
+  sed "s/__CHR__/$i/g" Script_template_York_Gemma_association_analysis.txt > Script_York_Gemma_association_analysis_chr${i}.sh
+  chmod 777 Script_York_Gemma_association_analysis_chr${i}.sh
+  sbatch Script_York_Gemma_association_analysis_chr${i}.sh
 done
 

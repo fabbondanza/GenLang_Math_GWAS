@@ -31,7 +31,6 @@ cat > $pheno.chr${i}.sh <<EOF1
 --bgenFile=/mnt/shared/projects/uosa/Silvia_Paracchini/shared/shared_data/new_alspac_external_500G_4/genetics/HRC_2019-05-13/all1/data/bgen_8bit/data_8bit_$i.bgen \
 --sampleFile=/mnt/shared/projects/uosa/Silvia_Paracchini/shared/shared_data/new_alspac_external_500G_4/genetics/HRC_2019-05-13/all1/data/data.sample \
 --bgenMinMAF=0.01 \
---bgenMinINFO=0.4 \
 --phenoFile=$phenofile \
 --phenoCol=$pheno \
 --covarFile=$phenofile \
